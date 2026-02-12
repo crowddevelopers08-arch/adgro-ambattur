@@ -9,7 +9,7 @@ const testimonials = [
   {
     text: `I had tried every hair growth product out there with no success, and I was losing hope. Then I found Adgro Hair Ambattur and decided to give their hair transplant a chance. The staff made me feel at ease from the consultation to the procedure. The results have been amazing—my hair looks natural and thick again! I couldn't be happier with the transformation. Thanks to Adgro Hair Ambattur, I'm finally feeling like myself again!`,
     name: "- Adhil Ashik",
-    image: "/Before-After-2amba.jpg",
+    image: "/Before-After-6amba.jpg",
   },
 ];
 
