@@ -61,7 +61,7 @@ const AdvertisementBanner = () => {
         
         {/* Right Section - Image */}
         <div className="flex-1 flex justify-center lg:justify-end items-center w-full max-w-md lg:max-w-lg">
-          <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
+          <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] max-[470px]:h-[200px] md:max-w-[360px] lg:max-w-[400px]">
             <Image
               src="/Before-After-2amba-Copy.jpg"
               alt="Hair Transplant Results - Before and After"
