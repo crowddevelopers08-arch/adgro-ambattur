@@ -10,9 +10,9 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: "Advanced GroHair - RajajiNagar",
+  title: "Advanced GroHair - Ambattur",
   description:
-    "Discover Rajajinagar’s Secret to Healthy, Beautiful Hair",
+    "Reclaim Confidence With Revolutionary Hair Restoration Now at Ambattur",
   generator: 'Nextjs15',
   icons: {
     icon: [
