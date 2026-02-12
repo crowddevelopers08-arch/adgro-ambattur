@@ -2,6 +2,7 @@ import SimpleMap from "@/components/comparison-section";
 import BeforeAfterSliderdrag from "@/components/drag";
 import FAQ from "@/components/faq";
 import ContactFooterReplica from "@/components/footer";
+import AdvertisementBanner from "@/components/hairtrans";
 import GrohairTopBar from "@/components/header";
 import AdGloHeroReplica from "@/components/hero-section";
 import GloskinHighlightSection from "@/components/logoslider";
@@ -21,6 +22,7 @@ export default function Home() {
       <section id="hero">
         <AdGloHeroReplica />
       </section>
+      <AdvertisementBanner />
    
 
       <HairConsultationCardExact />

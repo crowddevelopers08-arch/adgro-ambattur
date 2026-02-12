@@ -1,0 +1,97 @@
+"use client";
+import React from 'react';
+import Image from 'next/image';
+
+const AdvertisementBanner = () => {
+  return (
+    <div className="relative w-full max-w-6xl mt-10 max-[470px]:mt-0 mx-auto bg-gradient-to-br from-[#0f0505] via-[#1f0a0a] to-[#e82625] p-4 sm:p-5 md:p-6 rounded-lg md:rounded-xl shadow-lg md:shadow-xl overflow-hidden">
+      
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 md:gap-10">
+        
+        {/* Left Section - Main Content */}
+        <div className="flex-1 space-y-4 sm:space-y-5">
+          
+          <div className="mb-2 sm:mb-3">
+            <div className="inline-block px-3 py-1 sm:px-4 sm:py-1 bg-[#e82625] rounded-full shadow-lg">
+              <span className="text-white font-bold text-sm sm:text-base">✓ Permanent Solution</span>
+            </div>
+          </div>
+          
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
+            Hair Transplant
+          </h1>
+          
+          <p className="text-sm sm:text-base md:text-lg text-white/90 max-w-xl">
+            Consider investing in a permanent, hassle-free solution with our hair transplantation procedure. Our advanced techniques ensure natural-looking results with minimal scarring and downtime.
+          </p>
+          
+          <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-[#e82625]/20 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-[#e82625]"></div>
+              </div>
+              <span className="text-white text-sm">FUE & DHI Techniques</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-[#e82625]/20 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-[#e82625]"></div>
+              </div>
+              <span className="text-white text-sm">No Linear Scar</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded-full bg-[#e82625]/20 flex items-center justify-center">
+                <div className="w-2 h-2 rounded-full bg-[#e82625]"></div>
+              </div>
+              <span className="text-white text-sm">3-5 Days Recovery</span>
+            </div>
+          </div>
+          
+          {/* CTA Button */}
+          <div className="pt-4">
+            <a href="#form">
+              <button className="bg-white text-[#e82625] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors shadow-lg text-sm sm:text-base inline-flex items-center gap-2 group">
+                <span>Book Consultation</span>
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </button>
+            </a>
+          </div>
+        </div>
+        
+        {/* Right Section - Image */}
+        <div className="flex-1 flex justify-center lg:justify-end items-center w-full max-w-md lg:max-w-lg">
+          <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
+            <Image
+              src="/Before-After-2amba-Copy.jpg"
+              alt="Hair Transplant Results - Before and After"
+              fill
+              className="object-contain drop-shadow-2xl"
+              priority
+            />
+            <div className="absolute -top-3 -right-3 bg-[#e82625] text-white text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg">
+              FUE Technique
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Bottom Banner */}
+      <div className="relative z-10 mt-6 sm:mt-8 pt-4 border-t border-white/20">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          <p className="text-white/90 text-xs sm:text-sm font-medium">
+            Adgro Ambattur | Chennai
+          </p>
+          <p className="text-white/90 text-xs sm:text-sm font-medium flex items-center gap-1">
+            <span className="text-[#e82625]">✓</span> Free Consultation
+          </p>
+          <p className="text-white/90 text-xs sm:text-sm font-medium flex items-center gap-1">
+            <span className="text-[#e82625]">✓</span> EMI Available
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdvertisementBanner;
