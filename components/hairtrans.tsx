@@ -1,8 +1,38 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 
 const AdvertisementBanner = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
+  const images = [
+    {
+      src: "/wat1.jpeg",
+      alt: "Hair Transplant Results - Before and After - Case 1",
+      technique: "FUE Technique"
+    },
+    {
+      src: "/wat2.jpeg",
+      alt: "Hair Transplant Results - Before and After - Case 2",
+      technique: "DHI Technique"
+    },
+    {
+      src: "/wat3.jpeg",
+      alt: "Hair Transplant Results - Before and After - Case 3",
+      technique: "Sapphire FUE"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div className="relative w-full max-w-6xl mt-10 max-[470px]:mt-0 mx-auto bg-gradient-to-br from-[#0f0505] via-[#1f0a0a] to-[#e82625] p-4 sm:p-5 md:p-6 rounded-lg md:rounded-xl shadow-lg md:shadow-xl overflow-hidden">
       
@@ -59,18 +89,33 @@ const AdvertisementBanner = () => {
           </div>
         </div>
         
-        {/* Right Section - Image */}
+        {/* Right Section - Carousel */}
         <div className="flex-1 flex justify-center lg:justify-end items-center w-full max-w-md lg:max-w-lg">
-          <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] max-[470px]:h-[200px] md:max-w-[360px] lg:max-w-[400px]">
-            <Image
-              src="/Before-After-2amba-Copy.jpg"
-              alt="Hair Transplant Results - Before and After"
-              fill
-              className="object-contain drop-shadow-2xl"
-              priority
-            />
-            <div className="absolute -top-3 -right-3 bg-[#e82625] text-white text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg">
-              FUE Technique
+          <div className="relative w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[420px]">
+            {/* Image Carousel - Slightly increased heights */}
+            <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px]">
+              {images.map((image, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    className="object-cover rounded-lg shadow-2xl"
+                    priority={index === 0}
+                    sizes="(max-width: 470px) 300px, (max-width: 640px) 340px, (max-width: 768px) 380px, 420px"
+                  />
+                </div>
+              ))}
+            </div>
+            
+            {/* Dynamic Technique Badge */}
+            <div className="absolute -top-3 -right-3 bg-[#e82625] text-white text-xs sm:text-sm font-bold px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-lg transition-opacity duration-500">
+              {images[currentImageIndex].technique}
             </div>
           </div>
         </div>

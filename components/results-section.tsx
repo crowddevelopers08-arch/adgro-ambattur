@@ -24,7 +24,7 @@ const solutions = [
   },
   {
     title: "Beard Transplant",
-    img: "/Beard-Transplant.png",
+    img: "/sakal-eki.jpg",
     desc: "Achieve fuller, well-defined beards with our beard transplant procedure. Custom-designed to suit your facial features, providing natural results and long-lasting fullness.",
   },
   {
