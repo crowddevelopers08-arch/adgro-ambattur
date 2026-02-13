@@ -62,7 +62,7 @@ export default function Footer() {
             <div className="flex flex-col items-center gap-1 text-[16px] opacity-90">
               <div className="flex items-center gap-2">
                 <Phone size={ICON_SIZE} className="text-white shrink-0" />
-                <p>+91 74092 56789</p>
+                <p>+91 7409256789</p>
               </div>
               <p>customercare@adgrohairambattur.in</p>
             </div>
