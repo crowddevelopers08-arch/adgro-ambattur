@@ -1,6 +1,7 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import ConsultationForm from "./popupform";
 import { motion, AnimatePresence } from "framer-motion";
 
 const BeforeAfterSection = () => {
@@ -193,7 +194,6 @@ const BeforeAfterSection = () => {
               className="relative w-full max-w-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <ConsultationForm onClose={handleCloseForm} />
             </motion.div>
           </motion.div>
         )}
