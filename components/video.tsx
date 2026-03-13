@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const images = [
-  { src: "/Before-After-1amba.jpg", alt: "Before After 1" },
-  { src: "/Before-After-2amba.jpg", alt: "Before After 2" },
-  { src: "/Before-After-3amba.jpg", alt: "Before After 3" },
-  { src: "/Before-After-4amba.jpg", alt: "Before After 4" },
-  { src: "/Before-After-5amba.jpg", alt: "Before After 5" },
-  { src: "/Before-After-6amba.jpg", alt: "Before After 6" },
+  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba.jpg?updatedAt=1773379064179", alt: "Before After 1" },
+  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-6amba.jpg?updatedAt=1773379064239", alt: "Before After 2" },
+  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-5amba.jpg?updatedAt=1773379064215", alt: "Before After 3" },
+  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-3amba.jpg?updatedAt=1773379064188", alt: "Before After 4" },
+  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-4amba.jpg?updatedAt=1773379064096", alt: "Before After 5" },
+  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba-Copy.jpg?updatedAt=1773379064193", alt: "Before After 6" },
 ];
 
 const ImageGridCarousel = () => {

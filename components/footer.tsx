@@ -39,7 +39,7 @@ export default function Footer() {
             <div className="mb-8 flex justify-center">
               <div className="relative w-[270px] h-[100px] max-[470px]:w-[220px] max-[470px]:h-[80px]">
                 <Image
-                  src="/adgrojpg.jpg"
+                  src="https://ik.imagekit.io/cbvg612cb/public/ambatur-logo.jpg?updatedAt=1773379062806"
                   alt="Adgro Hair Ambattur Logo"
                   fill
                   style={{ objectFit: "contain" }}

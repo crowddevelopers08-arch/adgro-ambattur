@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function ThankTopBar({
-  logoSrc = "/ambatur-logo.jpg",
+  logoSrc = "https://ik.imagekit.io/cbvg612cb/public/ambatur-logo.jpg?updatedAt=1773379062806",
   phone = "+91 7409256789",
   buttonText = "Call Now",
 }: Props) {

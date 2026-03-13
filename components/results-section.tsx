@@ -4,32 +4,32 @@ import React from "react";
 const solutions = [
   {
     title: "Oxygen Laser Therapy",
-    img: "/Oxygen-Laser-Theraphy.png",
+    img: "https://ik.imagekit.io/cbvg612cb/public/Oxygen-Laser-Theraphy.png?updatedAt=1773379065204",
     desc: "Oxygen laser therapy soothes your scalp, eliminates dryness and frizz, and strengthens hair to prevent breakage. Experience a noticeable reduction in hair fall under just a few sessions, all while feeling revitalized and healthy.",
   },
   {
     title: "Cosmetic Hair Systems",
-    img: "/Cosmetic-Hair-Systems.png",
+    img: "https://ik.imagekit.io/cbvg612cb/public/Cosmetic-Hair-Systems.png?updatedAt=1773379064618",
     desc: "Get the natural, full head of hair you deserve. Our cosmetic hair systems are lightweight, breathable, and completely customizable for a perfect look. Enjoy the freedom of fullness without any invasive application.",
   },
   {
     title: "Mesotherapy",
-    img: "/Mesotherapy.png",
+    img: "https://ik.imagekit.io/cbvg612cb/public/Mesotherapy.png?updatedAt=1773379065436",
     desc: "This non-invasive treatment tackles hair loss at its root, stimulating growth, thickening strands, and improving overall scalp health. Enjoy healthier, fuller hair and regain confidence.",
   },
   {
     title: "Hair Transplant",
-    img: "/Hair-Transplantll.png",
+    img: "https://ik.imagekit.io/cbvg612cb/public/Hair-Transplantll.png?updatedAt=1773379065211",
     desc: "Consider investing in a permanent, hassle-free solution with our hair transplantation procedure. Our advanced techniques ensure natural-looking results with minimal scarring and downtime.",
   },
   {
     title: "Beard Transplant",
-    img: "/sakal-eki.jpg",
+    img: "https://ik.imagekit.io/cbvg612cb/public/sakal-eki.jpg?updatedAt=1773379064291",
     desc: "Achieve fuller, well-defined beards with our beard transplant procedure. Custom-designed to suit your facial features, providing natural results and long-lasting fullness.",
   },
   {
     title: "Eyebrow Transplant",
-    img: "/Eyebrow-Transplant.png",
+    img: "https://ik.imagekit.io/cbvg612cb/public/Eyebrow-Transplant.png?updatedAt=1773379065344",
     desc: "If you're looking for natural, fuller eyebrows, our eyebrow transplant technique delivers precise results. Designed to enhance your facial features and restore confidence.",
   },
 ];

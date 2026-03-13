@@ -25,7 +25,7 @@ const IVFHeroExact = () => {
           <div className="flex justify-center lg:justify-start mb-4 lg:mb-6 max-[470px]:mb-6">
             <div className="overflow-hidden rounded-[16px] w-full max-[470px]:h-20 max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[350px] h-[60px] sm:h-[70px] md:h-[80px] lg:h-[90px]">
               <img
-                src="/add.png"
+                src="https://ik.imagekit.io/cbvg612cb/public/add.png?updatedAt=1773379064271"
                 alt="Additional Information"
                 className="w-full h-full object-cover"
               />
@@ -37,7 +37,7 @@ const IVFHeroExact = () => {
             {/* Image - Slightly increased height for mobile */}
             <div className="overflow-hidden rounded-[20px] w-full max-w-[400px] sm:max-w-[480px] h-[240px] sm:h-[280px]">
               <img
-                src="/befaftttt.png"
+                src="https://ik.imagekit.io/cbvg612cb/public/befaftttt.png?updatedAt=1773379067896"
                 alt="Happy Family"
                 className="w-full h-full object-cover"
               />
@@ -110,7 +110,7 @@ const IVFHeroExact = () => {
           {/* Image - Increased width, reduced height */}
           <div className="overflow-hidden rounded-[28px] w-full max-w-[580px] h-[400px]">
             <img
-              src="/befaftttt.png"
+              src="https://ik.imagekit.io/cbvg612cb/public/befaftttt.png?updatedAt=1773379067896"
               alt="Happy Family"
               className="w-full h-full object-cover"
             />

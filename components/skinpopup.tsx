@@ -20,7 +20,7 @@ const AboutUsExact = () => {
           {/* Image */}
           <div className="overflow-hidden rounded-2xl sm:rounded-[24px] md:rounded-[28px]">
             <img
-              src="/Hair-transplant-surger.jpg"
+              src="https://ik.imagekit.io/cbvg612cb/public/Hair-transplant-surger.jpg?updatedAt=1773379064788"
               alt="Advanced GroHair Team"
               className="w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px] object-cover hover:scale-105 transition-transform duration-500"
             />

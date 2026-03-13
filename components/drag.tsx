@@ -153,7 +153,7 @@ const BeforeAfter: React.FC<BeforeAfterProps> = ({
         }}
       >
         <img
-          src="after.png"
+          src="https://ik.imagekit.io/cbvg612cb/public/after.png?updatedAt=1773379064049"
           alt="After"
           className="absolute top-0 left-0 w-full h-full object-cover"
           draggable={false}
@@ -168,7 +168,7 @@ const BeforeAfter: React.FC<BeforeAfterProps> = ({
         }}
       >
         <img
-          src="before-8.png"
+          src="https://ik.imagekit.io/cbvg612cb/public/before-8.png?updatedAt=1773379063779"
           alt="Before"
           className="absolute top-0 left-0 w-full h-full object-cover"
           draggable={false}

@@ -4,12 +4,12 @@ const testimonials = [
   {
     text: `I had always struggled with thinning hair, and it affected my confidence. After hearing about Adgro Hair Ambattur, I decided to take the plunge and try their hair transplant services. From the moment I walked into the clinic, I was impressed with the professionalism and care of the team. The procedure was smooth, and the results were life-changing! My hair looks fuller, and I feel more confident than ever. Thank you, Adgro Hair Ambattur, for helping me reclaim my confidence!`,
     name: "- S. R. Vishwa Rajan",
-    image: "/Before-After-2amba.jpg",
+    image: "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba.jpg?updatedAt=1773379064179",
   },
   {
     text: `I had tried every hair growth product out there with no success, and I was losing hope. Then I found Adgro Hair Ambattur and decided to give their hair transplant a chance. The staff made me feel at ease from the consultation to the procedure. The results have been amazing—my hair looks natural and thick again! I couldn't be happier with the transformation. Thanks to Adgro Hair Ambattur, I'm finally feeling like myself again!`,
     name: "- Adhil Ashik",
-    image: "/Before-After-6amba.jpg",
+    image: "https://ik.imagekit.io/cbvg612cb/public/Before-After-6amba.jpg?updatedAt=1773379064239",
   },
 ];
 

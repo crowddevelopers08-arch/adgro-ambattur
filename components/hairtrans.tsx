@@ -7,17 +7,17 @@ const AdvertisementBanner = () => {
   
   const images = [
     {
-      src: "/wat1.jpeg",
+      src: "https://ik.imagekit.io/cbvg612cb/public/wat1.jpeg?updatedAt=1773379063657",
       alt: "Hair Transplant Results - Before and After - Case 1",
       technique: "FUE Technique"
     },
     {
-      src: "/wat2.jpeg",
+      src: "https://ik.imagekit.io/cbvg612cb/public/wat2.jpeg?updatedAt=1773379063354",
       alt: "Hair Transplant Results - Before and After - Case 2",
       technique: "DHI Technique"
     },
     {
-      src: "/wat3.jpeg",
+      src: "https://ik.imagekit.io/cbvg612cb/public/wat3.jpeg?updatedAt=1773379063699",
       alt: "Hair Transplant Results - Before and After - Case 3",
       technique: "Sapphire FUE"
     }

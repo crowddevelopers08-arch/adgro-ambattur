@@ -28,19 +28,19 @@ const featuresTop = [
   {
     title: "2000+ Hair Transformations",
     desc: "State-of-the-art imaging for accurate hair and scalp assessment.",
-    image: "/1042037.png",
+    image: "https://ik.imagekit.io/cbvg612cb/public/1042037.png?updatedAt=1773379062378",
     alt: "Diagnostic Imaging Icon"
   },
   {
     title: "Board Certified Experts",
     desc: "Evidence-based, minimally invasive hair restoration techniques.",
-    image: "/12563520.png",
+    image: "https://ik.imagekit.io/cbvg612cb/public/12563520.png?updatedAt=1773379062362",
     alt: "Treatment Strategy Icon"
   },
   {
     title: "FDA-Approved Equipment",
     desc: "Holistic rehabilitation and follow-up care for lasting results.",
-    image: "/12401842.png",
+    image: "https://ik.imagekit.io/cbvg612cb/public/12401842.png?updatedAt=1773379062382",
     alt: "Recovery Support Icon"
   },
 ];
@@ -49,19 +49,19 @@ const featuresBottom = [
   {
     title: "24/7 Support",
     desc: "Meet our experienced hair specialists for a detailed evaluation.",
-    image: "/4233817.png",
+    image: "https://ik.imagekit.io/cbvg612cb/public/4233817.png?updatedAt=1773379062819",
     alt: "Consultation Icon"
   },
   {
     title: "No Cost EMI",
     desc: "We analyze your medical history, hair condition, and goals thoroughly.",
-    image: "/14075405.png",
+    image: "https://ik.imagekit.io/cbvg612cb/public/14075405.png?updatedAt=1773379062497",
     alt: "Case Review Icon"
   },
   {
     title: "60+ Clinics Nationwide",
     desc: "Identifying the exact cause of hair loss, not just treating symptoms.",
-    image: "/17343127.png",
+    image: "https://ik.imagekit.io/cbvg612cb/public/17343127.png?updatedAt=1773379062669",
     alt: "Root Cause Analysis Icon"
   },
 ];
