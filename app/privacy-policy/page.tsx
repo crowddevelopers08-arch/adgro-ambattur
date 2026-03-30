@@ -69,7 +69,7 @@ export default function SimplePrivacyPolicyPage() {
             {/* Section 2 */}
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                2. How We Use Your Information
+                2. How We Use Your Informations
               </h2>
               <p className="text-gray-600 mb-3">
                 We use your personal information for the following purposes:
