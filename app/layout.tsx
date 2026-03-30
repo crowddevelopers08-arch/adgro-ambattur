@@ -81,6 +81,21 @@ export default function RootLayout({
           }}
         />
         
+        {/* Google Ads Conversion Event */}
+        <Script
+          id="google-ads-conversion"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              gtag('event', 'conversion', {
+                'send_to': 'AW-11239517140/z29CCJ63n5IcENTXte8p',
+                'value': 1.0,
+                'currency': 'INR'
+              });
+            `,
+          }}
+        />
+        
         {/* Microsoft Clarity Tracking Code */}
         <Script
           id="microsoft-clarity"
