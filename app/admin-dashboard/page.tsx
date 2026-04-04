@@ -101,6 +101,7 @@ export default function LeadsTable({
   const [loading, setLoading] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
+  const [formFilter, setFormFilter] = useState("all");
   const [treatmentFilter, setTreatmentFilter] = useState("all");
   const [dateFilter, setDateFilter] = useState("all");
   const [syncFilter, setSyncFilter] = useState("all");
@@ -197,6 +198,10 @@ export default function LeadsTable({
       safe(l.city).includes(safe(searchTerm));
     
     const matchesStatus = statusFilter === "all" || uiStatus === statusFilter;
+
+    const matchesForm =
+      formFilter === "all" ||
+      (l.formName || "website leads").toLowerCase() === formFilter.toLowerCase();
     
     const matchesTreatment =
       treatmentFilter === "all" || 
@@ -214,6 +219,7 @@ export default function LeadsTable({
     return (
       matchesSearch && 
       matchesStatus && 
+      matchesForm &&
       matchesTreatment && 
       matchesDate && 
       matchesSync
@@ -356,7 +362,7 @@ export default function LeadsTable({
                     Leads Management
                   </CardTitle>
                   <CardDescription className="text-sm sm:text-base dark:text-gray-400">
-                    Manage and track website appointment requests
+                    Manage and track appointment requests across all lead forms
                   </CardDescription>
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -391,7 +397,7 @@ export default function LeadsTable({
             </div>
 
             {/* Filter Section */}
-            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-6 gap-3 p-3 sm:p-4 bg-gray-50/50 dark:bg-gray-800/50 rounded-lg border dark:border-gray-700">
+            <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-7 gap-3 p-3 sm:p-4 bg-gray-50/50 dark:bg-gray-800/50 rounded-lg border dark:border-gray-700">
               <div className="relative lg:col-span-2">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" />
                 <Input
@@ -416,6 +422,23 @@ export default function LeadsTable({
                     <SelectItem value="scheduled">Scheduled</SelectItem>
                     <SelectItem value="converted">Converted</SelectItem>
                     <SelectItem value="lost">Lost</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div>
+                <Select value={formFilter} onValueChange={setFormFilter}>
+                  <SelectTrigger className="h-10 text-sm dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
+                    <div className="flex items-center">
+                      <span className="truncate">Lead Type</span>
+                    </div>
+                  </SelectTrigger>
+                  <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                    <SelectItem value="all">All Lead Types</SelectItem>
+                    {uniqueFormNames.map((formName) => (
+                      <SelectItem key={formName} value={formName}>
+                        {formName}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
@@ -508,6 +531,7 @@ export default function LeadsTable({
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400 max-w-md mx-auto text-sm">
                   {searchTerm || statusFilter !== "all" || treatmentFilter !== "all" || dateFilter !== "all"
+                    || formFilter !== "all"
                     ? "Try adjusting your search or filters"
                     : "No appointment requests have been submitted yet"}
                 </p>
@@ -689,6 +713,7 @@ export default function LeadsTable({
                     </th>
                     <th className="px-4 py-3 text-left min-w-[160px] dark:text-gray-300">Contact</th>
                     <th className="px-4 py-3 text-left min-w-[180px] dark:text-gray-300">Treatment</th>
+                    <th className="px-4 py-3 text-left min-w-[160px] dark:text-gray-300">Lead Type</th>
                     <th className="px-4 py-3 text-left min-w-[100px] dark:text-gray-300">PIN Code</th>
                     <th className="px-4 py-3 text-left min-w-[100px] dark:text-gray-300">Sync</th>
                     <th className="px-4 py-3 text-left min-w-[100px] dark:text-gray-300">Status</th>
@@ -754,6 +779,9 @@ export default function LeadsTable({
                             </td>
                             <td className="px-4 py-3">
                               <span className="dark:text-gray-300">{treatment || "-"}</span>
+                            </td>
+                            <td className="px-4 py-3">
+                              <span className="dark:text-gray-300">{lead.formName || "website leads"}</span>
                             </td>
                             <td className="px-4 py-3">
                               <span className="dark:text-gray-300">{lead.city || "-"}</span>

@@ -12,7 +12,7 @@ interface BeforeAfterProps {
   defaultPosition?: number;
 }
 
-const BeforeAfter: React.FC<BeforeAfterProps> = ({
+export const BeforeAfter: React.FC<BeforeAfterProps> = ({
   width = "100%",
   height = "500px",
   showLabels = true,

@@ -19,6 +19,21 @@ interface LeadData {
   userAgent?: string
 }
 
+function resolveFormName(leadData: LeadData) {
+  const normalizedFormName = leadData.formName?.trim().toLowerCase()
+
+  if (
+    normalizedFormName === 'hairtreatment leads' ||
+    normalizedFormName === 'hairtreatments leads' ||
+    normalizedFormName === 'hair treatment leads' ||
+    normalizedFormName === 'hair treatments leads'
+  ) {
+    return 'hairtreatment leads'
+  }
+
+  return leadData.formName?.trim() || 'website leads'
+}
+
 /**
  * Generate comprehensive form data string with all user details (for system notes)
  */
@@ -55,6 +70,7 @@ function generateFormDataString(leadData: LeadData): string {
  */
 async function saveToDatabase(leadData: LeadData) {
   try {
+    const formName = resolveFormName(leadData)
     const lead = await prisma.lead.create({
       data: {
         name: leadData.name,
@@ -65,7 +81,7 @@ async function saveToDatabase(leadData: LeadData) {
         city: leadData.city || '',
         consent: leadData.consent || false,
         source: leadData.source || 'Adgor Hair Ambattur Website',
-        formName: 'website leads',
+        formName,
         pageUrl: leadData.pageUrl || '',
         userAgent: leadData.userAgent || '',
         status: 'NEW',
@@ -113,6 +129,7 @@ async function sendToTeleCRM(leadData: LeadData) {
   }
 
   try {
+    const formName = resolveFormName(leadData)
     const formDataString = generateFormDataString(leadData);
 
     const telecrmPayload = {
@@ -140,12 +157,12 @@ async function sendToTeleCRM(leadData: LeadData) {
         "PageName": leadData.pageUrl || 'https://adgrohairambattur.in/',
         "State": "",
         "Age": "",
-        "FormName": "website leads"
+        "FormName": formName
       },
       actions: [
         {
           "type": "SYSTEM_NOTE",
-          "text": `Form Name: website leads`
+          "text": `Form Name: ${formName}`
         },
         {
           "type": "SYSTEM_NOTE", 
@@ -249,10 +266,13 @@ export async function GET(request: Request) {
     const dateRange = searchParams.get('date') || '' // 'today', 'week', 'month'
     const sortBy = searchParams.get('sortBy') || 'createdAt'
     const sortOrder = searchParams.get('sortOrder') || 'desc'
+    const formName = searchParams.get('formName') || ''
 
     // Build where clause
-    const where: any = {
-      formName: 'website leads' // Only fetch website leads
+    const where: any = {}
+
+    if (formName && formName !== 'all') {
+      where.formName = formName
     }
 
     // Search across multiple fields
@@ -357,12 +377,12 @@ export async function GET(request: Request) {
       treatmentStats
     ] = await Promise.all([
       // Total leads count
-      prisma.lead.count({ where: { formName: 'website leads' } }),
+      prisma.lead.count({ where: formName && formName !== 'all' ? { formName } : {} }),
       
       // Today's leads
       prisma.lead.count({
         where: {
-          formName: 'website leads',
+          ...(formName && formName !== 'all' ? { formName } : {}),
           createdAt: {
             gte: new Date(new Date().setHours(0, 0, 0, 0))
           }
@@ -372,7 +392,7 @@ export async function GET(request: Request) {
       // This week's leads
       prisma.lead.count({
         where: {
-          formName: 'website leads',
+          ...(formName && formName !== 'all' ? { formName } : {}),
           createdAt: {
             gte: new Date(new Date().setDate(new Date().getDate() - 7))
           }
@@ -382,7 +402,7 @@ export async function GET(request: Request) {
       // This month's leads
       prisma.lead.count({
         where: {
-          formName: 'website leads',
+          ...(formName && formName !== 'all' ? { formName } : {}),
           createdAt: {
             gte: new Date(new Date().setMonth(new Date().getMonth() - 1))
           }
@@ -392,7 +412,7 @@ export async function GET(request: Request) {
       // Synced leads
       prisma.lead.count({
         where: {
-          formName: 'website leads',
+          ...(formName && formName !== 'all' ? { formName } : {}),
           telecrmSynced: true,
           error: null
         }
@@ -401,7 +421,7 @@ export async function GET(request: Request) {
       // Error leads
       prisma.lead.count({
         where: {
-          formName: 'website leads',
+          ...(formName && formName !== 'all' ? { formName } : {}),
           error: { not: null }
         }
       }),
@@ -409,7 +429,7 @@ export async function GET(request: Request) {
       // Status counts
       prisma.lead.groupBy({
         by: ['status'],
-        where: { formName: 'website leads' },
+        where: formName && formName !== 'all' ? { formName } : {},
         _count: true
       }),
       
@@ -417,7 +437,7 @@ export async function GET(request: Request) {
       prisma.lead.groupBy({
         by: ['procedure'],
         where: { 
-          formName: 'website leads',
+          ...(formName && formName !== 'all' ? { formName } : {}),
           procedure: { not: '' }
         },
         _count: true
@@ -496,14 +516,15 @@ export async function GET(request: Request) {
  * Handle POST request for website leads form
  */
 export async function POST(request: Request) {
-  let data: LeadData;
+  let data: LeadData | null = null;
   let savedLead: any = null;
 
   try {
-    data = await request.json()
+    const payload = await request.json() as LeadData
+    data = payload
 
     // Validate required fields
-    if (!data.name || !data.phone) {
+    if (!payload.name || !payload.phone) {
       return NextResponse.json(
         { error: 'Missing required fields: name, phone' },
         { status: 400 }
@@ -511,16 +532,16 @@ export async function POST(request: Request) {
     }
 
     // Set default values
-    data.formName = 'website leads';
-    data.source = data.source || 'Adgor Hair Ambattur Website';
-    data.consent = true; // Consent implied by form submission
+    payload.formName = resolveFormName(payload);
+    payload.source = payload.source || 'Adgor Hair Ambattur Website';
+    payload.consent = true; // Consent implied by form submission
     
     // Step 1: Save to database first
-    savedLead = await saveToDatabase(data);
+    savedLead = await saveToDatabase(payload);
     console.log('Lead saved to database:', { 
       id: savedLead.id, 
-      formName: 'website leads',
-      pageUrl: data.pageUrl 
+      formName: payload.formName,
+      pageUrl: payload.pageUrl 
     });
 
     // Step 2: Send to TeleCRM
@@ -528,8 +549,8 @@ export async function POST(request: Request) {
     let telecrmError = null;
 
     try {
-      telecrmResponse = await sendToTeleCRM(data);
-      console.log('Lead sent to TeleCRM successfully:', { formName: 'website leads' });
+      telecrmResponse = await sendToTeleCRM(payload);
+      console.log('Lead sent to TeleCRM successfully:', { formName: payload.formName });
 
       if (savedLead) {
         await updateLeadTelecrmStatus(savedLead.id, telecrmResponse?.id);
@@ -537,7 +558,7 @@ export async function POST(request: Request) {
     } catch (error) {
       telecrmError = error;
       console.error('TeleCRM submission failed:', { 
-        formName: 'website leads', 
+        formName: payload.formName, 
         error: error instanceof Error ? error.message : String(error) 
       });
       
@@ -559,7 +580,7 @@ export async function POST(request: Request) {
         telecrmResponse: telecrmResponse,
         telecrmError: telecrmError ? (telecrmError instanceof Error ? telecrmError.message : String(telecrmError)) : null,
         timestamp: new Date().toISOString(),
-        formName: 'website leads',
+        formName: payload.formName,
         message: telecrmError 
           ? 'Lead saved to database but TeleCRM sync failed' 
           : 'Lead saved successfully and synced with TeleCRM'
@@ -570,7 +591,7 @@ export async function POST(request: Request) {
     console.error('Lead submission error:', {
       error: error instanceof Error ? error.message : 'Unknown error',
       timestamp: new Date().toISOString(),
-      formName: 'website leads',
+      formName: data?.formName || 'website leads',
       databaseSaved: !!savedLead
     })
 
@@ -586,7 +607,7 @@ export async function POST(request: Request) {
             message: data.message || '',
             city: data.city || '',
             source: data.source || 'Adgor Hair Ambattur Website',
-            formName: 'website leads',
+            formName: resolveFormName(data),
             pageUrl: data.pageUrl || '',
             userAgent: data.userAgent || '',
             status: 'ERROR',
@@ -607,7 +628,7 @@ export async function POST(request: Request) {
         details: error instanceof Error ? error.message : 'Unknown error',
         databaseSaved: !!savedLead,
         referenceId: `ERR-${Date.now()}`,
-        formName: 'website leads'
+        formName: data?.formName || 'website leads'
       },
       { status: 500 }
     )
