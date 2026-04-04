@@ -316,14 +316,8 @@ export default function HairTreatmentsForm() {
           <button
             type="submit"
             disabled={isSubmitting || !isFormComplete}
-            className="w-full text-white font-bold py-3 px-4 rounded-lg transition duration-200 transform hover:scale-[1.01] active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed text-sm tracking-wide shadow-md hover:shadow-lg"
+            className="w-full text-white font-bold py-3 px-4 rounded-lg transition duration-200 transform active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed text-sm tracking-wide shadow-md"
             style={{ backgroundColor: "#e82625" }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#c41e1d";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#e82625";
-            }}
           >
             {isSubmitting ? (
               <span className="flex items-center justify-center">
