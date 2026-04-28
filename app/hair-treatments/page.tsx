@@ -12,6 +12,7 @@ import HairTreatmentsGrid from "@/components/results-section";
 import TestimonialCard from "@/components/review";
 import HairConsultationCardExact from "@/components/skinpopup";
 import ImageCarouselGrid from "@/components/video";
+import InstagramVideoSection from "@/components/instagram-video-section";
 import Head from 'next/head'
 import Script from 'next/script'
 
@@ -32,6 +33,9 @@ export default function Home() {
         <HairTreatmentsGrid />
         <section id="why">
           <ImageCarouselGrid />
+        </section>
+        <section id="instagram-videos">
+          <InstagramVideoSection />
         </section>
 
 
