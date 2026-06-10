@@ -31,6 +31,10 @@ function resolveFormName(leadData: LeadData) {
     return 'hairtreatment leads'
   }
 
+  if (normalizedFormName === 'hairtransplant lead' || normalizedFormName === 'hair transplant lead') {
+    return 'hairtransplant lead'
+  }
+
   return leadData.formName?.trim() || 'website leads'
 }
 
