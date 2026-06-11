@@ -13,7 +13,7 @@ import HairProblems from "@/components/transplant/hair-problems";
 import CareSection from "@/components/transplant/care-section";
 import WhyBestClinic from "@/components/transplant/why-best-clinic";
 import FaqSection from "@/components/transplant/faq-section";
-import HairTreatmentsBeforeAfter from "@/components/transplant/hair-treatments-before-after";
+// import HairTreatmentsBeforeAfter from "@/components/transplant/hair-treatments-before-after";
 import ClinicIntro from "@/components/transplant/clinic-intro";
 
 export default function Home() {
@@ -22,7 +22,7 @@ export default function Home() {
       <main className="min-h-screen bg-background">
         <GrohairTopBar />
         <IVFHeroExact />
-        <HairTreatmentsBeforeAfter />
+        {/* <HairTreatmentsBeforeAfter /> */}
         <ImageGridCarousel />
         <ClinicIntro />
         <WhyChooseUs />

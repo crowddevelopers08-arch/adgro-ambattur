@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface FormData {
   fullName: string;
@@ -20,15 +21,16 @@ interface FormErrors {
 }
 
 const TREATMENTS = [
-  "Oxygen Laser Therapy",
-  "Cosmetic Hair Systems",
-  "Mesotherapy",
+  "Hair Loss Treatment",
+  "Alopecia Areata ",
+  "dandruff Treatment",
   "Hair Transplant",
-  "Beard Transplant",
-  "Eyebrow Transplant",
+  "Bladness Treatment",
+  "Hair Thining Treatment",
 ];
 
 export default function HairTreatmentsForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     phone: "",
@@ -38,7 +40,6 @@ export default function HairTreatmentsForm() {
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const isFormComplete =
@@ -149,12 +150,8 @@ export default function HairTreatmentsForm() {
         throw new Error(data.error || "Failed to submit form");
       }
 
-      setSubmitSuccess(true);
       resetForm();
-
-      window.setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 5000);
+      router.push("/hair-transplant/thank-you");
     } catch (error) {
       console.error("Hair treatments form submission error:", error);
       setSubmitError(
@@ -176,14 +173,6 @@ export default function HairTreatmentsForm() {
       </div>
 
       <div className="p-5">
-        {submitSuccess && (
-          <div className="mb-4 bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-sm">
-            <p className="text-center font-medium">
-              Appointment booked successfully! We&apos;ll contact you soon.
-            </p>
-          </div>
-        )}
-
         {submitError && (
           <div className="mb-4 bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-sm">
             <p className="text-center font-medium">{submitError}</p>

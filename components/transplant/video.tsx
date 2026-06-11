@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const images = [
-  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba.jpg?updatedAt=1773379064179", alt: "Before After 1" },
-  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-6amba.jpg?updatedAt=1773379064239", alt: "Before After 2" },
-  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-5amba.jpg?updatedAt=1773379064215", alt: "Before After 3" },
-  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-3amba.jpg?updatedAt=1773379064188", alt: "Before After 4" },
-  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-4amba.jpg?updatedAt=1773379064096", alt: "Before After 5" },
-  { src: "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba-Copy.jpg?updatedAt=1773379064193", alt: "Before After 6" },
+  { src: "/images/bfaf-imgs-1.png", alt: "Before After 1" },
+  { src: "/images/bfaf-imgs-2.png", alt: "Before After 2" },
+  // { src: "/images/bfaf-img-3.png", alt: "Before After 3" },
+  { src: "/images/bfaf-img-7.png", alt: "Before After 4" },
+  { src: "/images/bfaf-imgs-5.png", alt: "Before After 5" },
+  { src: "/images/bfaf-imgs-4.png", alt: "Before After 6" },
 ];
 
 const ImageGridCarousel = () => {
@@ -113,8 +113,8 @@ const ImageGridCarousel = () => {
           {/* Title */}
           <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">
-             See What Our Clients {" "}
-             <span className="text-[#e82625]">Achieved!</span>
+             Real {" "}
+             <span className="text-[#e82625]">Results!</span>
             </h2>
             <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-3xl mx-auto">
               Witness the transformation with our proven hair treatments

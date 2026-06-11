@@ -168,7 +168,10 @@ export default function WhyChooseUs() {
 
         {/* Bottom center button */}
         <div className="flex justify-center max-sm:mt-5 mt-10">
-          <button className="bg-[#e82625] text-white text-sm sm:text-[15px] font-semibold px-8 py-3.5 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer">
+          <button
+            onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
+            className="bg-[#e82625] text-white text-sm sm:text-[15px] font-semibold px-8 py-3.5 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer"
+          >
             Book Your Consultation
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

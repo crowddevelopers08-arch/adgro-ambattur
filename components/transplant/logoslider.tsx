@@ -85,11 +85,12 @@ const CareFeaturesExact = () => {
 
       {/* CTA */}
       <div className="flex justify-center mt-10 max-sm:mt-5">
-        <a href="#form">
-          <button className="bg-[#e82625] cursor-pointer text-white text-base sm:text-lg font-medium px-8 py-3.5 rounded-full hover:scale-105 transition-all duration-300">
-            Book an Appointment
-          </button>
-        </a>
+        <button
+          onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
+          className="bg-[#e82625] cursor-pointer text-white text-base sm:text-md font-medium px-8 py-2.5 rounded-full hover:scale-105 transition-all duration-300"
+        >
+          Book an Appointment
+        </button>
       </div>
 
       {/* Keyframe animation */}

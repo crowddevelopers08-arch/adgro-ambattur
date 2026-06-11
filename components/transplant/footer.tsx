@@ -23,13 +23,13 @@ export default function Footer() {
             <span>Call Now</span>
           </a>
 
-          <a
-            href="#form"
+          <button
+            onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
             className="flex-1 flex items-center justify-center gap-2 bg-black text-white py-3 px-4 font-medium hover:bg-gray-900 transition-colors"
           >
             <Calendar size={ICON_SIZE} className="shrink-0" />
             <span>Book Now</span>
-          </a>
+          </button>
         </div>
 
         {/* TOP SECTION */}
@@ -55,19 +55,25 @@ export default function Footer() {
                 className="text-white shrink-0 mt-[2px]"
               />
               <p className="leading-relaxed">
-                No.19-8-116, Landmark: Beside D Mart, 9D, Air Bypass Rd, Above
-                Caratlane, Bairagi Patteda, chennai, Andhra Pradesh 517501,
-                India
+                New No 124/102, Redhills Main Road, Vijaylakshmipuram, NVA FTTH RSU, Ambattur, Thiruvallur, Tamil Nadu – 600053
               </p>
             </div>
 
             {/* PHONE & EMAIL */}
-            <div className="flex flex-col items-center gap-1 text-[16px] opacity-90">
+            <div className="flex flex-col items-center gap-3 text-[16px] opacity-90">
               <div className="flex items-center gap-2">
                 <Phone size={ICON_SIZE} className="text-white shrink-0" />
                 <p>+91 7409256789</p>
               </div>
+              
               <p>customercare@adgrohairambattur.in</p>
+              <a
+                href="tel:+917409256789"
+                className="flex items-center gap-2 bg-white text-[#e82625] font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#e82625] hover:text-white border-2 border-white transition-colors duration-200"
+              >
+                <Phone size={14} className="shrink-0" />
+                Call Us Directly
+              </a>
             </div>
           </div>
         </div>
@@ -76,12 +82,12 @@ export default function Footer() {
         <div className="relative max-[470px]:mb-12 bg-black text-gray-300 text-sm py-4">
           <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-center sm:text-left">
-              © 2026 Adgro Hair Ambattur. All rights reserved | Powered By Crowd
+              © 2026 Advanced Grohair chennai. All rights reserved | Powered By Crowd
               Developers
             </p>
 
             <a
-              href="/privacy-policy"
+              href="/hair-transplant/privacy-policy"
               className="text-gray-300 hover:text-white hover:underline transition-colors text-sm"
             >
               Privacy Policy

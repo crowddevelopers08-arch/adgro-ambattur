@@ -1,157 +1,116 @@
 "use client";
 
-import React, { useCallback, useEffect, useState } from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
 
 const testimonials = [
   {
-    text: `I had always struggled with thinning hair, and it affected my confidence. After hearing about Adgro Hair Ambattur, I decided to take the plunge and try their hair transplant services. From the moment I walked into the clinic, I was impressed with the professionalism and care of the team. The procedure was smooth, and the results were life-changing! My hair looks fuller, and I feel more confident than ever. Thank you, Adgro Hair Ambattur, for helping me reclaim my confidence!`,
-    name: "- S. R. Vishwa Rajan",
-    image:
-      "https://ik.imagekit.io/cbvg612cb/public/Before-After-2amba.jpg?updatedAt=1773379064179",
+    text: `I visited this clinic for hair fall and dandruff issues.Had a great experience,I can see good improvement in my hair growth... highly recommended one in Ambattur.`,
+    name: "S. R. Vishwa Rajan",
+    role: "Hair Transplant Patient",
   },
   {
-    text: `I had tried every hair growth product out there with no success, and I was losing hope. Then I found Adgro Hair Ambattur and decided to give their hair transplant a chance. The staff made me feel at ease from the consultation to the procedure. The results have been amazing—my hair looks natural and thick again! I couldn't be happier with the transformation. Thanks to Adgro Hair Ambattur, I'm finally feeling like myself again!`,
-    name: "- Adhil Ashik",
-    image:
-      "https://ik.imagekit.io/cbvg612cb/public/Before-After-6amba.jpg?updatedAt=1773379064239",
+    text: `Last month i take a prp treatment here, Excellent Results,I wud surely recommend this place for prp treatments thank you so much especially loved my last session.`,
+    name: "Adhil Ashik",
+    role: "FUE Hair Transplant Patient",
   },
   {
-    text: `I was very skeptical at first, but the team at Adgro Hair Ambattur completely changed my perspective. The doctors explained every step of the process clearly, making sure I felt comfortable. Within months, I noticed significant regrowth and my hairline looked completely restored. The staff was kind, professional, and genuinely cared about my results. I would absolutely recommend Adgro Hair Ambattur to anyone dealing with hair loss!`,
-    name: "- Karthik Selvam",
-    image:
-      "https://ik.imagekit.io/cbvg612cb/public/Before-After-3amba.jpg?updatedAt=1773379064179",
+    text: `I have taken 6 PRP session and the result was good. Regarding the session my hairfall was low nowadays. I suggest everyone to visit adgro ambattur clinic for treatment.`,
+    name: "Karthik Selvam",
+    role: "Hair Restoration Patient",
   },
   {
-    text: `After years of dealing with hair loss, I finally decided to visit Adgro Hair Ambattur. The consultation was thorough and the team addressed all my concerns patiently. The treatment was comfortable and the recovery was faster than I expected. The transformation in my appearance has been remarkable—I look years younger! I am truly grateful to the entire team at Adgro Hair Ambattur for their outstanding work.`,
-    name: "- Priya Nandakumar",
-    image:
-      "https://ik.imagekit.io/cbvg612cb/public/Before-After-5amba.jpg?updatedAt=1773379064239",
+    text: `I have completed my final PRP session today in adgro ambattur. I am very happy with the results. My hair fall has been controlled and my hair density has increased.Thank to Dr.Thilaga.`,
+    name: "Priya Nandakumar",
+    role: "Hair Transplant Patient",
+  },
+  {
+    text: `I went for a HAIR PRP and GFC treatment I have completed my 2 sessions, it gives visible results. Doctor's are very professional they did a painless treatment and staffs were also good and friendly and clinic is very hygienic`,
+    name: "Sowmiya S",
+    role: "Hair Transplant Patient",
   },
 ];
 
+const allCards = [...testimonials, ...testimonials];
+
 export default function TestimonialCard() {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) return;
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap());
-    api.on("select", () => setCurrent(api.selectedScrollSnap()));
-  }, [api]);
-
-  // Auto-advance every 5 seconds
-  useEffect(() => {
-    if (!api) return;
-    const timer = setInterval(() => api.scrollNext(), 5000);
-    return () => clearInterval(timer);
-  }, [api]);
-
-  const scrollPrev = useCallback(() => api?.scrollPrev(), [api]);
-  const scrollNext = useCallback(() => api?.scrollNext(), [api]);
-
   return (
-    <div className="w-full bg-[#fff7f7] max-w-8xl py-10 max-[470px]:py-6 mx-auto px-4 sm:px-6 lg:px-8">
-      {/* HEADER */}
-      <div className="text-center mb-8 sm:mb-10 md:mb-12">
-        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-[36px] font-semibold mb-2 sm:mb-3 md:mb-4 px-2 sm:px-4">
-          Discover Why We're the{" "} 
-          
-              <span className="text-[#e82625]">Trusted Choice of Many!</span>
-        </h2>
+    <section className="w-full bg-[#fff7f7] py-14 max-[470px]:py-8">
+      <style jsx>{`
+        @keyframes reviewScroll {
+          0%   { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .review-track {
+          animation: reviewScroll 28s linear infinite;
+        }
+        .review-track:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-10 max-[470px]:mb-6">
+          <span className="inline-flex items-center gap-2 text-[#e82625] text-xs font-bold tracking-[0.22em] uppercase mb-4">
+            <span className="w-5 h-px bg-[#e82625]" />
+            Clients Reviews
+            <span className="w-5 h-px bg-[#e82625]" />
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-extrabold text-[#1f2430] leading-tight">
+            Discover Why We&apos;re the{" "}
+            <span className="text-[#e82625]">Trusted Choice of Many!</span>
+          </h2>
+        </div>
       </div>
 
-      {/* CAROUSEL */}
-      <div className="relative px-0 sm:px-10">
-        <Carousel
-          setApi={setApi}
-          opts={{ align: "start", loop: true }}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-4 md:-ml-6">
-            {testimonials.map((item, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-4 md:pl-6 basis-full md:basis-1/2"
-              >
-                <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-5 md:p-6 lg:p-8 flex flex-col sm:flex-row items-start gap-4 sm:gap-5 md:gap-6 shadow-sm hover:shadow-md transition-shadow duration-300 h-full">
-                  {/* LEFT CONTENT */}
-                  <div className="flex-1 order-2 sm:order-1 w-full flex flex-col h-full">
-                    <p className="text-gray-700 text-xs sm:text-sm md:text-base leading-relaxed flex-1">
-                      {item.text}
-                    </p>
-                    <div className="mt-auto">
-                      <p className="mt-3 sm:mt-4 font-semibold text-gray-900 text-xs sm:text-sm md:text-base">
-                        {item.name}
-                      </p>
-                      <div className="flex items-center gap-0.5 sm:gap-1 mt-1 sm:mt-2">
-                        {[...Array(5)].map((_, i) => (
-                          <svg
-                            key={i}
-                            className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-orange-400 fill-current"
-                            viewBox="0 0 20 20"
-                          >
-                            <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
-                          </svg>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+      {/* Marquee — full width, no side padding */}
+      <div className="overflow-hidden relative">
+        {/* Left fade */}
+        <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to right, #fff7f7, transparent)" }} />
+        {/* Right fade */}
+        <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none"
+          style={{ background: "linear-gradient(to left, #fff7f7, transparent)" }} />
 
-                  {/* RIGHT IMAGE */}
-                  <div className="flex-shrink-0 order-1 sm:order-2 mx-auto sm:mx-0 self-start">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-32 h-36 sm:w-36 sm:h-40 md:w-40 md:h-44 lg:w-48 lg:h-56 xl:w-52 max-[470px]:w-[250px] xl:h-60 object-cover rounded-lg"
-                    />
-                  </div>
+        <div className="review-track flex gap-5 w-max px-4">
+          {allCards.map((item, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 flex flex-col gap-4 w-[300px] sm:w-[360px] flex-shrink-0"
+            >
+              {/* Quote icon */}
+              <div className="w-9 h-9 rounded-xl bg-[#fff1f1] flex items-center justify-center flex-shrink-0">
+                <svg className="w-5 h-5 text-[#e82625]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+              </div>
+
+              {/* Review text */}
+              <p className="text-[#6b7280] text-sm leading-relaxed flex-1">
+                {item.text}
+              </p>
+
+              {/* Divider */}
+              <div className="w-full h-px bg-gray-100" />
+
+              {/* Name + Stars */}
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="font-bold text-[#1f2430] text-sm">{item.name}</p>
+                  <p className="text-[#6b7280] text-xs mt-0.5">{item.role}</p>
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
-
-        {/* PREV BUTTON */}
-        <button
-          onClick={scrollPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-white border border-gray-200 shadow hover:bg-gray-50 transition-colors"
-          aria-label="Previous"
-        >
-          <ChevronLeft className="w-5 h-5 text-gray-600" />
-        </button>
-
-        {/* NEXT BUTTON */}
-        <button
-          onClick={scrollNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-white border border-gray-200 shadow hover:bg-gray-50 transition-colors"
-          aria-label="Next"
-        >
-          <ChevronRight className="w-5 h-5 text-gray-600" />
-        </button>
+                <div className="flex items-center gap-0.5">
+                  {[...Array(5)].map((_, s) => (
+                    <svg key={s} className="w-4 h-4 text-orange-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.122-6.545L.488 6.91l6.561-.955L10 0l2.951 5.955 6.561.955-4.756 4.635 1.122 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-
-      {/* DOT INDICATORS */}
-      <div className="flex justify-center gap-2 mt-6">
-        {Array.from({ length: count }).map((_, i) => (
-          <button
-            key={i}
-            onClick={() => api?.scrollTo(i)}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === current ? "w-6 bg-[#e82625]" : "w-2 bg-gray-300"
-            }`}
-            aria-label={`Go to slide ${i + 1}`}
-          />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }
