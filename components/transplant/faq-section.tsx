@@ -130,7 +130,7 @@ export default function FaqSection() {
             {/* Main image — large, top-left */}
             <div className="absolute top-0 left-0 w-[82%] h-[82%] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/faq-img1.jpg"
+                src="/hair.png"
                 alt="Hair Transplant Clinic"
                 fill
                 className="object-cover object-center"

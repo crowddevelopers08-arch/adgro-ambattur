@@ -5,12 +5,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 
 const images = [
-  { src: "/images/bfaf-imgs-1.png", alt: "Before After 1" },
-  { src: "/images/bfaf-imgs-2.png", alt: "Before After 2" },
-  // { src: "/images/bfaf-img-3.png", alt: "Before After 3" },
-  { src: "/images/bfaf-img-7.png", alt: "Before After 4" },
-  { src: "/images/bfaf-imgs-5.png", alt: "Before After 5" },
-  { src: "/images/bfaf-imgs-4.png", alt: "Before After 6" },
+  { src: "/images/bfafs-imgs-1.png", alt: "Before After 1" },
+  { src: "/images/bfafs-imgs-2.png", alt: "Before After 2" },
+  { src: "/images/bfafs-imgs-4.png", alt: "Before After 3" },
+  { src: "/images/bfafs-imgs-5.png", alt: "Before After 4" },
+  { src: "/images/bfaf-img-7.png", alt: "Before After 5" },
+  // { src: "/images/bfafs-imgs-6.png", alt: "Before After 6" },
 ];
 
 const ImageGridCarousel = () => {

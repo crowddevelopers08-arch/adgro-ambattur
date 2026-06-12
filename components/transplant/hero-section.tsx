@@ -13,7 +13,7 @@ const IVFHeroExact = () => {
           <div className="order-2 lg:order-1 text-center lg:text-left">
 
             {/* Heading */}
-            <h1 className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] leading-[1.2] font-extrabold text-[#1f2430] mb-4">
+            <h1 className="text-[28px] sm:text-[38px] md:text-[36px] lg:text-[48px] leading-[1.2] font-extrabold text-[#1f2430] mb-4">
               #1 Hair Transplant Clinic
               <br className="hidden sm:block" />
               in Chennai
