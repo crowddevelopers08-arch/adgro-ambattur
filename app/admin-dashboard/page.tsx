@@ -415,7 +415,7 @@ export default function LeadsTable({
                       <span className="truncate">Status</span>
                     </div>
                   </SelectTrigger>
-                  <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                  <SelectContent className="bg-white dark:border-gray-700">
                     <SelectItem value="all">All Status</SelectItem>
                     <SelectItem value="new">New</SelectItem>
                     <SelectItem value="contacted">Contacted</SelectItem>
@@ -432,7 +432,7 @@ export default function LeadsTable({
                       <span className="truncate">Lead Type</span>
                     </div>
                   </SelectTrigger>
-                  <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                  <SelectContent className="bg-white dark:border-gray-700">
                     <SelectItem value="all">All Lead Types</SelectItem>
                     {uniqueFormNames.map((formName) => (
                       <SelectItem key={formName} value={formName}>
@@ -444,12 +444,12 @@ export default function LeadsTable({
               </div>
               <div>
                 <Select value={treatmentFilter} onValueChange={setTreatmentFilter}>
-                  <SelectTrigger className="h-10 text-sm dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
+                  <SelectTrigger className="h-10 text-sm dark:bg-gray-500 dark:border-gray-700 dark:text-gray-300">
                     <div className="flex items-center">
                       <span className="truncate">Treatment</span>
                     </div>
                   </SelectTrigger>
-                  <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                  <SelectContent className=" bg-white dark:border-gray-700">
                     <SelectItem value="all">All Treatments</SelectItem>
                     {TREATMENT_OPTIONS.map((treatment) => (
                       <SelectItem key={treatment} value={treatment}>
@@ -461,13 +461,13 @@ export default function LeadsTable({
               </div>
               <div>
                 <Select value={syncFilter} onValueChange={setSyncFilter}>
-                  <SelectTrigger className="h-10 text-sm dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300">
+                  <SelectTrigger className="h-10 text-sm bg-white dark:border-gray-700 dark:text-gray-300">
                     <div className="flex items-center">
                       <CheckCircle className="h-4 w-4 mr-2 flex-shrink-0" />
                       <span className="truncate">Sync Status</span>
                     </div>
                   </SelectTrigger>
-                  <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                  <SelectContent className="bg-white dark:border-gray-700">
                     <SelectItem value="all">All Sync</SelectItem>
                     <SelectItem value="synced">Synced</SelectItem>
                     <SelectItem value="unsynced">Not Synced</SelectItem>
@@ -482,7 +482,7 @@ export default function LeadsTable({
                       <span className="truncate">Date</span>
                     </div>
                   </SelectTrigger>
-                  <SelectContent className="dark:bg-gray-800 dark:border-gray-700">
+                  <SelectContent className="bg-white dark:border-gray-700">
                     <SelectItem value="all">All Time</SelectItem>
                     <SelectItem value="today">Today</SelectItem>
                     <SelectItem value="week">This Week</SelectItem>

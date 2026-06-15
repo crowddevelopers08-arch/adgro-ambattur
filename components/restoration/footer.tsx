@@ -86,7 +86,7 @@ export default function Footer() {
             </p>
 
             <a
-              href="/hair-transplant/privacy-policy"
+              href="/hair-restoration/privacy-policy"
               className="text-gray-300 hover:text-white hover:underline transition-colors text-sm"
             >
               Privacy Policy
