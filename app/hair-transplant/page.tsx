@@ -15,12 +15,15 @@ import WhyBestClinic from "@/components/transplant/why-best-clinic";
 import FaqSection from "@/components/transplant/faq-section";
 // import HairTreatmentsBeforeAfter from "@/components/transplant/hair-treatments-before-after";
 import ClinicIntro from "@/components/transplant/clinic-intro";
+import BannerSection from "@/components/transplant/banner-section";
 
 export default function Home() {
   return (
     <>
       <main className="min-h-screen bg-background">
         <GrohairTopBar />
+        <BannerSection />
+
         <IVFHeroExact />
         {/* <HairTreatmentsBeforeAfter /> */}
         <ImageGridCarousel />

@@ -1,3 +1,4 @@
+import BannerSection from "@/components/regrowth/banner-section";
 import CareSection from "@/components/regrowth/care-section";
 import ClinicIntro from "@/components/regrowth/clinic-intro";
 import SimpleMap from "@/components/regrowth/comparison-section";
@@ -20,6 +21,7 @@ export default function Home() {
     <>
       <main className="min-h-screen bg-background">
         <GrohairTopBar />
+        <BannerSection />
         <IVFHeroExact />
         {/* <HairTreatmentsBeforeAfter /> */}
         <ImageGridCarousel />

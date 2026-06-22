@@ -1,3 +1,4 @@
+import BannerSection from "@/components/restoration/banner-section";
 import CareSection from "@/components/restoration/care-section";
 import ClinicIntro from "@/components/restoration/clinic-intro";
 import SimpleMap from "@/components/restoration/comparison-section";
@@ -19,6 +20,7 @@ export default function Home() {
     <>
       <main className="min-h-screen bg-background">
         <GrohairTopBar />
+        <BannerSection />
         <IVFHeroExact />
         {/* <HairTreatmentsBeforeAfter /> */}
         <ImageGridCarousel />
