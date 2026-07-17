@@ -4,9 +4,9 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 const banners = [
-  { src: "https://res.cloudinary.com/dthj7fakc/image/upload/v1782110661/LP-Banner-Ambattur3_or9u5t.jpg",  alt: "Advanced Grohair Ambattur Banner 1" },
-  { src: "https://res.cloudinary.com/dthj7fakc/image/upload/v1782110661/LP-Banner-Ambattur3_or9u5t.jpg", alt: "Advanced Grohair Ambattur Banner 2" },
-  { src: "https://res.cloudinary.com/dthj7fakc/image/upload/v1782110661/LP-Banner-Ambattur3_or9u5t.jpg", alt: "Advanced Grohair Ambattur Banner 3" },
+  { src: "/images/LP-Banner-Ambattur3.jpeg", alt: "Advanced Grohair Ambattur Banner 1" },
+  { src: "/images/LP-Banner-Ambattur3.jpeg", alt: "Advanced Grohair Ambattur Banner 2" },
+  { src: "/images/LP-Banner-Ambattur3.jpeg", alt: "Advanced Grohair Ambattur Banner 3" },
 ];
 
 export default function BannerSection() {
@@ -25,6 +25,27 @@ export default function BannerSection() {
   }, []);
 
   return (
+    <>
+      <section className="relative block w-full overflow-hidden md:hidden">
+        <Image
+          src="/ambattur-mobile.png"
+          alt="Advanced Grohair Ambattur"
+          width={1080}
+          height={1350}
+          priority
+          className="h-auto w-full"
+        />
+      </section>
+      <section className="relative hidden w-full overflow-hidden md:block lg:hidden">
+        <Image
+          src="/ambattur-tablet.png"
+          alt="Advanced Grohair Ambattur"
+          width={1448}
+          height={1086}
+          priority
+          className="h-auto w-full"
+        />
+      </section>
     <section className="hidden lg:block w-full relative overflow-hidden bg-[#1f2430]">
       {/* Banner Images */}
       <div className="relative w-full aspect-[13/7] sm:aspect-[16/6] lg:aspect-[14/6]">
@@ -48,7 +69,7 @@ export default function BannerSection() {
         {/* Gradient overlay — bottom fade */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
-        <div className="absolute right-[7%] bottom-[12%] z-10 flex items-center gap-3 sm:right-[11%] sm:bottom-[11%] md:right-[16%] md:bottom-[12%]">
+        <div className="absolute right-[7%] bottom-[12%] z-10 flex items-center gap-3 sm:right-[11%] sm:bottom-[11%] md:right-[20%] md:bottom-[16%]">
           <a
             onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
 
@@ -101,5 +122,6 @@ export default function BannerSection() {
         </button>
       </div>
     </section>
+    </>
   );
 }
