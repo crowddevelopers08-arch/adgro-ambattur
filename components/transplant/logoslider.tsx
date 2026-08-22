@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { scrollToLeadForm } from "./scroll-to-form";
 
 const features = [
   {
@@ -86,7 +87,7 @@ const CareFeaturesExact = () => {
       {/* CTA */}
       <div className="flex justify-center mt-10 max-sm:mt-5">
         <button
-          onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
+          onClick={scrollToLeadForm}
           className="bg-[#e82625] cursor-pointer text-white text-base sm:text-md font-medium px-8 py-2.5 rounded-full hover:scale-105 transition-all duration-300"
         >
           Book an Appointment
