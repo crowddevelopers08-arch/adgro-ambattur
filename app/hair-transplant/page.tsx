@@ -4,7 +4,7 @@ import TestimonialCard from "@/components/transplant/review";
 import GrohairTopBar from "@/components/transplant/header";
 import InstagramVideoSection from "@/components/transplant/instagram-video-section";
 import SimpleMap from "@/components/transplant/comparison-section";
-import IVFHeroExact from "@/components/transplant/hero-section";
+// import IVFHeroExact from "@/components/transplant/hero-section";
 import ImageGridCarousel from "@/components/transplant/video";
 import CareFeaturesExact from "@/components/transplant/logoslider";
 import Footer from "@/components/transplant/footer";
@@ -24,15 +24,15 @@ export default function Home() {
         <GrohairTopBar />
         <BannerSection />
 
-        <IVFHeroExact />
+        {/* <IVFHeroExact /> */}
         {/* <HairTreatmentsBeforeAfter /> */}
         <ImageGridCarousel />
         <ClinicIntro />
         <WhyChooseUs />
         <HairProblems />
         <CareSection />
-        <WhyBestClinic />
-        <CareFeaturesExact />
+        {/* <WhyBestClinic />
+        <CareFeaturesExact /> */}
         <FaqSection />
         <InstagramVideoSection />
         <TestimonialCard />

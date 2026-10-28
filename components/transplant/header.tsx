@@ -27,23 +27,23 @@ export default function GrohairTopBar({
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
       `}</style>
       {/* Spacer - Adjusted for larger logo on desktop */}
-      <div className="h-[70px] xs:h-[75px] sm:h-[80px] md:h-[85px] lg:h-[90px] xl:h-[95px] 2xl:h-[100px]" />
+      <div className="h-[58px] xs:h-[60px] sm:h-[62px] md:h-[64px] lg:h-[72px] xl:h-[76px] 2xl:h-[84px]" />
 
       <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white border-b border-gray-100" style={{fontFamily: "'Outfit', sans-serif"}}>
         <div className="mx-auto w-full max-w-screen-2xl px-4 xs:px-5 sm:px-6 md:px-10 lg:px-20 xl:px-28 2xl:px-36">
-          <div className="flex items-center justify-between py-3 xs:py-3.5 sm:py-4 md:py-4 lg:py-4.5 xl:py-5 2xl:py-5.5">
+          <div className="flex items-center justify-between py-2 xs:py-2 sm:py-2 md:py-2 lg:py-2.5 xl:py-2.5 2xl:py-3">
             {/* Left: Logo - Significantly larger on larger screens */}
             <div className="flex items-center">
-              <div className="relative h-[55px] w-[180px] xs:h-[48px] xs:w-[170px] 
-                            sm:h-[50px] sm:w-[180px] md:h-[55px] md:w-[200px] 
-                            lg:h-[65px] lg:w-[250px] xl:h-[75px] xl:w-[300px] 
-                            2xl:h-[85px] 2xl:w-[350px]">
+              <div className="relative h-[40px] w-[140px] xs:h-[42px] xs:w-[150px]
+                            sm:h-[44px] sm:w-[160px] md:h-[46px] md:w-[170px]
+                            lg:h-[50px] lg:w-[200px] xl:h-[54px] xl:w-[220px]
+                            2xl:h-[58px] 2xl:w-[240px]">
                 <Image
                   src={logoSrc}
                   alt="Advanced GloSkin"
                   fill
                   priority
-                  sizes="(max-width: 640px) 180px, (max-width: 768px) 170px, (max-width: 1024px) 180px, (max-width: 1280px) 200px, (max-width: 1536px) 300px, 350px"
+                  sizes="(max-width: 640px) 140px, (max-width: 768px) 160px, (max-width: 1024px) 170px, (max-width: 1280px) 200px, (max-width: 1536px) 220px, 240px"
                   className="object-contain object-left"
                 />
               </div>
@@ -63,13 +63,13 @@ export default function GrohairTopBar({
                   hover:scale-[1.03]
                   active:scale-[0.98]
                   hover:shadow-lg
-                  px-6 py-2.5
-                  xs:px-6 xs:py-2.5
-                  sm:px-7 sm:py-3
-                  md:px-6 md:py-2.5
+                  px-5 py-2
+                  xs:px-5 xs:py-2
+                  sm:px-6 sm:py-2
+                  md:px-5 md:py-2
                   lg:px-6 lg:py-2.5
                   xl:px-6 xl:py-2.5
-                  2xl:px-7 2xl:py-3
+                  2xl:px-7 2xl:py-2.5
                   cursor-pointer
                 "
                 style={{
@@ -100,7 +100,7 @@ export default function GrohairTopBar({
                 </svg>
 
                 <span className="
-                  text-sm xs:text-base sm:text-lg md:text-base lg:text-base xl:text-base 2xl:text-lg
+                  text-sm xs:text-sm sm:text-base md:text-sm lg:text-base xl:text-base 2xl:text-base
                   font-semibold
                 ">
                   {buttonText}

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { scrollToLeadForm } from "./scroll-to-form";
 
 const points = [
   "Advanced Hair Transplant Technology",
@@ -78,7 +79,7 @@ export default function WhyBestClinic() {
             {/* CTA */}
             <div className="mt-10 max-sm:mt-5">
               <button
-                onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
+                onClick={scrollToLeadForm}
                 className="bg-[#e82625] text-white text-sm font-semibold px-8 py-3.5 rounded-full flex items-center gap-2 hover:opacity-90 transition-opacity cursor-pointer"
               >
                 Book Your Consultation

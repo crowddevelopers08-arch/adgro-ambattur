@@ -2,6 +2,7 @@
 
 import { MapPin, Phone, ChevronUp, PhoneCall, Calendar } from "lucide-react";
 import Image from "next/image";
+import { scrollToLeadForm } from "./scroll-to-form";
 
 const ICON_SIZE = 18;
 
@@ -24,7 +25,7 @@ export default function Footer() {
           </a>
 
           <button
-            onClick={() => document.getElementById("form")?.scrollIntoView({ behavior: "smooth" })}
+            onClick={scrollToLeadForm}
             className="flex-1 flex items-center justify-center gap-2 bg-black text-white py-3 px-4 font-medium hover:bg-gray-900 transition-colors"
           >
             <Calendar size={ICON_SIZE} className="shrink-0" />

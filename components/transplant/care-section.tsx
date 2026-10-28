@@ -26,12 +26,18 @@ const cards = [
     description:
       "Long-lasting and natural-looking hair restoration solutions tailored for your scalp condition.",
   },
+  {
+    icon: "/icon-img-5.png",
+    title: "DHI Hair Transplant",
+    description:
+      "Direct Hair Implantation with specialized implanter pen for better control, precision and natural results.",
+  },
 ];
 
 export default function CareSection() {
   return (
     <section className="py-16 max-sm:py-6 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-6xl mx-auto">
+      <div className="w-full mx-auto">
 
         {/* Header */}
         <div className="text-center mb-14 max-sm:mb-6">
@@ -49,11 +55,11 @@ export default function CareSection() {
         </div>
 
         {/* 4 Cards Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-0">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden flex flex-col items-center text-center px-8 py-10"
+              className="group relative overflow-hidden flex flex-col items-center text-center px-6 xl:px-5 py-10"
             >
               {/* Top-to-bottom fill overlay on hover */}
               <div className="absolute inset-0 bg-[#e82625] origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-500 ease-in-out z-0" />

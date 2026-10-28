@@ -29,7 +29,15 @@ const TREATMENTS = [
   "Hair Thining Treatment",
 ];
 
-export default function HairTreatmentsForm() {
+type HairTreatmentsFormProps = {
+  /** "stacked" = one field per row (default). "grid" = 2-column matrix, shorter and wider. */
+  variant?: "stacked" | "grid";
+};
+
+export default function HairTreatmentsForm({
+  variant = "stacked",
+}: HairTreatmentsFormProps) {
+  const isGrid = variant === "grid";
   const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
@@ -179,7 +187,14 @@ export default function HairTreatmentsForm() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className={
+            isGrid
+              ? "grid grid-cols-1 gap-x-4 gap-y-3 sm:grid-cols-2"
+              : "space-y-4"
+          }
+        >
           <div>
             <label
               htmlFor="fullName"
@@ -305,7 +320,9 @@ export default function HairTreatmentsForm() {
           <button
             type="submit"
             disabled={isSubmitting || !isFormComplete}
-            className="w-full text-white font-bold py-3 px-4 rounded-lg transition duration-200 transform active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed text-sm tracking-wide shadow-md"
+            className={`w-full text-white font-bold py-3 px-4 rounded-lg transition duration-200 transform active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed text-sm tracking-wide shadow-md ${
+              isGrid ? "sm:self-end" : ""
+            }`}
             style={{ backgroundColor: "#e82625" }}
           >
             {isSubmitting ? (
